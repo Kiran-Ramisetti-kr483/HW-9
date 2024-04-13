@@ -16,6 +16,7 @@ app = FastAPI(
     description="A FastAPI application for creating, listing available codes, and deleting QR codes. "
                 "It also supports OAuth for secure access.",
     version="0.0.1",
+        redoc_url=None,
     contact={
         "name": "API Support",
         "url": "http://www.example.com/support",
@@ -28,5 +29,5 @@ app = FastAPI(
 )
 
 # Include routers for the application
-app.include_router(qr_code.router, prefix="/qr-codes")  # QR code management routes
-app.include_router(oauth.router, prefix="/auth")  # OAuth authentication routes
+app.include_router(qr_code.router)  # QR code management routes
+app.include_router(oauth.router)  # OAuth authentication routes

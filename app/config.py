@@ -23,7 +23,7 @@ SERVER_BASE_URL = os.getenv('SERVER_BASE_URL', 'http://localhost:80')
 SERVER_DOWNLOAD_FOLDER = os.getenv('SERVER_DOWNLOAD_FOLDER', 'downloads')
 
 # Secret key for cryptographic operations
-SECRET_KEY = os.getenv("SECRET_KEY", os.urandom(32))
+SECRET_KEY = os.getenv("SECRET_KEY", "secret-getenvkey")
 
 # Algorithm used for JWT encoding/decoding
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
