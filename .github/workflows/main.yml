@@ -1,5 +1,4 @@
 name: CI/CD Pipeline
-
 on:
   push:
     branches:
@@ -7,7 +6,6 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,7 +14,7 @@ jobs:
         python-version: [3.10.12] # Define Python versions here
     steps:
       - uses: actions/checkout@v4
-      
+ 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
@@ -58,7 +56,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: kaw393939/devops_demo:${{ github.sha }} # Uses the Git SHA for tagging
+          tags: kr483/devops_demo:${{ github.sha }} # Uses the Git SHA for tagging
           platforms: linux/amd64,linux/arm64 # Multi-platform support
           cache-from: type=registry,ref=kaw393939/devops_demo:cache
           cache-to: type=inline,mode=max
