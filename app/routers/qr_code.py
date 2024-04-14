@@ -65,8 +65,7 @@ async def list_qr_codes_endpoint(token: str = Depends(oauth2_scheme)):
         links=generate_links("list", qr_file, SERVER_BASE_URL, f"{SERVER_BASE_URL}/{SERVER_DOWNLOAD_FOLDER}/{qr_file}")
     ) for qr_file in qr_files]
     return responses
-
-@router.delete("/qr-codes/{qr_filname}", status_code=status.HTTP_204_NO_CONTENT, tags=["QR Codes"])
+@router.delete("/qr-codes/{qr_filename}", status_code=status.HTTP_204_NO_CONTENT, tags=["QR Codes"])
 async def delete_qr_code_endpoint(qr_filename: str, token: str = Depends(oauth2_scheme)):
     logging.info(f"Deleting QR code: {qr_filename}.")
     qr_code_path = QR_DIRECTORY / qr_filename
