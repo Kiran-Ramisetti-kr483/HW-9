@@ -1,1 +1,1 @@
-Homework 9 completed.
+Resolved all errors and completed Homework 9.
