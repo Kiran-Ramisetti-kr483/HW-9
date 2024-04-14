@@ -39,7 +39,7 @@ jobs:
         run: pytest
 
   build-and-push-docker:
-    needs: test
+    needs: test  # This ensures that this job runs after the 'test' job
     runs-on: ubuntu-latest
     environment: production
     steps:
